@@ -1,0 +1,13 @@
+{
+    "bin": [
+        "bin/brain-games"
+    ],
+    "name": "iselldonuts/brain-games",
+    "authors": [
+        {
+            "name": "Valentin Khokhlov",
+            "email": "mananathen@gmail.com"
+        }
+    ],
+    "require": {}
+}
