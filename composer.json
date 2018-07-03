@@ -11,5 +11,10 @@
             "email": "mananathen@gmail.com"
         }
     ],
-    "require": {}
+    "autoload": {
+        "files": ["src/Cli.php"]
+    },
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.9"
+    }
 }
