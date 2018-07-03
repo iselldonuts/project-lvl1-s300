@@ -3,6 +3,8 @@
         "bin/brain-games"
     ],
     "name": "iselldonuts/brain-games",
+    "description": "Collection of cli-games for your brain",
+    "keywords": ["game", "cli"],
     "authors": [
         {
             "name": "Valentin Khokhlov",
