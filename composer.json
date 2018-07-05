@@ -5,6 +5,7 @@
     "name": "iselldonuts/brain-games",
     "description": "Collection of cli-games for your brain",
     "keywords": ["game", "cli"],
+    "license": "MIT",
     "authors": [
         {
             "name": "Valentin Khokhlov",
