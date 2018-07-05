@@ -8,4 +8,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-BrainGames\Games\Even\init();
+BrainGames\Games\Calc\init();
