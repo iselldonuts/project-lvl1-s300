@@ -1,6 +1,7 @@
 {
     "bin": [
-        "bin/brain-games"
+        "bin/brain-games",
+        "bin/brain-even"
     ],
     "name": "iselldonuts/brain-games",
     "description": "Collection of cli-games for your brain",
@@ -13,7 +14,10 @@
         }
     ],
     "autoload": {
-        "files": ["src/Cli.php"]
+        "files": [
+            "src/Cli.php",
+            "src/Games/Even.php"
+        ]
     },
     "scripts": {
         "phpcs": "phpcs"
