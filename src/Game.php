@@ -8,13 +8,11 @@ const VICTORY_SCORE = 3;
 
 function start($title, $get_question, $get_answer)
 {
-    line();
-    line("Welcome to Brain Games!");
-    line($title);
-    line();
+    line(PHP_EOL . "Welcome to Brain Games!");
+    line($title . PHP_EOL);
+
     $name = prompt("May I have your name?", '', ' ');
-    line("Hello, %s", $name);
-    line();
+    line("Hello, %s" . PHP_EOL, $name);
 
     $score = 0;
     while ($score < VICTORY_SCORE) {
@@ -36,5 +34,5 @@ function start($title, $get_question, $get_answer)
         }
     }
 
-    line("Congratulations, %s", $name);
+    line("Congratulations, %s" . PHP_EOL, $name);
 }
