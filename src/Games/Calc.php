@@ -4,29 +4,33 @@ namespace BrainGames\Games\Calc;
 const MIN_NUMBER = 0;
 const MAX_NUMBER = 100;
 const OPERATORS = ['*', '+', '-'];
+const DESCRIPTION = 'What is the result of the expression?';
 
 function init()
 {
-    $title = 'What is the result of the expression?';
-
-    $get_question = function () {
+    $get_current_question_data =  function () {
         $number1 = rand(MIN_NUMBER, MAX_NUMBER);
         $number2 = rand(MIN_NUMBER, MAX_NUMBER);
         $operator = OPERATORS[array_rand(OPERATORS)];
-        return "$number1 $operator $number2";
-    };
 
-    $get_answer = function ($question) {
-        [$number1, $operator, $number2] = explode(' ', $question);
+        $answer = 0;
         switch ($operator) {
             case '*':
-                return strval($number1 * $number2);
+                $answer = $number1 * $number2;
+                break;
             case '+':
-                return strval($number1 + $number2);
+                $answer = $number1 + $number2;
+                break;
             case '-':
-                return strval($number1 - $number2);
+                $answer = $number1 - $number2;
+                break;
         }
+
+        return [
+            'question' => "$number1 $operator $number2",
+            'answer' => strval($answer)
+        ];
     };
 
-    \BrainGames\Game\start($title, $get_question, $get_answer);
+    \BrainGames\Game\start(DESCRIPTION, $get_current_question_data);
 }

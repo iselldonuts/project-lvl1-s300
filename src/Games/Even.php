@@ -3,19 +3,24 @@ namespace BrainGames\Games\Even;
 
 const MIN_NUMBER = 0;
 const MAX_NUMBER = 100;
+const DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
 
 function init()
 {
-    $title = 'Answer "yes" if number even otherwise answer "no".';
+    $get_current_question_data = function () {
+        $number = rand(MIN_NUMBER, MAX_NUMBER);
+        $answer = is_even($number) ? 'yes' : 'no';
 
-    $get_question = function () {
-        return (string) rand(MIN_NUMBER, MAX_NUMBER);
+        return [
+            'question' => strval($number),
+            'answer' => $answer
+        ];
     };
 
-    $get_answer = function ($question) {
-        $number = (int) $question;
-        return $number % 2 === 0 ? 'yes' : 'no';
-    };
+    \BrainGames\Game\start(DESCRIPTION, $get_current_question_data);
+}
 
-    \BrainGames\Game\start($title, $get_question, $get_answer);
+function is_even($number)
+{
+    return $number % 2 === 0;
 }
