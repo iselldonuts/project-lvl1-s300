@@ -2,7 +2,8 @@
     "bin": [
         "bin/brain-games",
         "bin/brain-even",
-        "bin/brain-calc"
+        "bin/brain-calc",
+        "bin/brain-gcd"
     ],
     "name": "iselldonuts/brain-games",
     "description": "Collection of cli-games for your brain",
@@ -19,7 +20,8 @@
             "src/Cli.php",
             "src/Game.php",
             "src/Games/Even.php",
-            "src/Games/Calc.php"
+            "src/Games/Calc.php",
+            "src/Games/Gcd.php"
         ]
     },
     "scripts": {
