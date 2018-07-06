@@ -32,5 +32,5 @@ function balance($number)
     for ($i = 0; $i < $len; $i++, $rem--) {
         $result[] = ($rem > 0) ? $base + 1 : $base;
     }
-    return implode('', array_reverse($result));
+    return intval(implode('', array_reverse($result)));
 }
