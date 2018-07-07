@@ -5,7 +5,8 @@
         "bin/brain-calc",
         "bin/brain-gcd",
         "bin/brain-balance",
-        "bin/brain-progression"
+        "bin/brain-progression",
+        "bin/brain-prime"
     ],
     "name": "iselldonuts/brain-games",
     "description": "Collection of cli-games for your brain",
@@ -25,7 +26,8 @@
             "src/Games/Calc.php",
             "src/Games/Gcd.php",
             "src/Games/Balance.php",
-            "src/Games/Progression.php"
+            "src/Games/Progression.php",
+            "src/Games/Prime.php"
         ]
     },
     "scripts": {
