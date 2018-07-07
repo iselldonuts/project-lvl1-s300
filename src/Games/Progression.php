@@ -17,7 +17,7 @@ function init()
         $step = rand(STEP_MIN, STEP_MAX);
         $seq = progression($start, $step, PROGRESSION_LENGTH);
 
-        $index_to_mark = rand(0, sizeof($seq) - 1);
+        $index_to_mark = array_rand($seq);
         $marked_seq = $seq;
         $marked_seq[$index_to_mark] = '..';
 
