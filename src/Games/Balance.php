@@ -11,11 +11,10 @@ function init()
 {
     $get_current_question_data = function () {
         $number = rand(MIN_NUMBER, MAX_NUMBER);
-        $balanced_number = balance($number);
 
         return [
             'question' => strval($number),
-            'answer' => strval($balanced_number)
+            'answer' => strval(balance($number))
         ];
     };
 
@@ -25,14 +24,14 @@ function init()
 function balance($number)
 {
     $numbers = str_split(strval($number));
-    $len = sizeof($numbers);
+    $length = sizeof($numbers);
     $sum = array_sum($numbers);
-    $base = intval($sum / $len);
-    $rem = $sum % $len;
+    $base = intval($sum / $length);
+    $remainder = $sum % $length;
 
     $result = [];
-    for ($i = 0; $i < $len; $i += 1, $rem -= 1) {
-        $result[] = ($rem > 0) ? $base + 1 : $base;
+    for ($i = 0; $i < $length; $i += 1, $remainder -= 1) {
+        $result[] = ($remainder > 0) ? $base + 1 : $base;
     }
-    return intval(implode('', array_reverse($result)));
+    return implode('', array_reverse($result));
 }

@@ -15,26 +15,26 @@ function init()
     $get_current_question_data = function () {
         $start = rand(START_MIN, START_MAX);
         $step = rand(STEP_MIN, STEP_MAX);
-        $seq = progression($start, $step, PROGRESSION_LENGTH);
-
-        $index_to_mark = array_rand($seq);
-        $marked_seq = $seq;
-        $marked_seq[$index_to_mark] = '..';
+        $progression = generate_progression($start, $step, PROGRESSION_LENGTH);
+        
+        $index_to_mark = array_rand($progression);
+        $marked_progression = $progression;
+        $marked_progression[$index_to_mark] = '..';
 
         return [
-            'question' => implode(' ', $marked_seq),
-            'answer' => strval($seq[$index_to_mark])
+            'question' => implode(' ', $marked_progression),
+            'answer' => strval($progression[$index_to_mark])
         ];
     };
 
     start(DESCRIPTION, $get_current_question_data);
 }
 
-function progression($start, $step, $len)
+function generate_progression($start, $step, $len)
 {
-    $seq = [];
+    $progression = [];
     for ($i = 0; $i < $len; $i += 1) {
-        $seq[] = $start + $i * $step;
+        $progression[] = $start + $i * $step;
     }
-    return $seq;
+    return $progression;
 }
