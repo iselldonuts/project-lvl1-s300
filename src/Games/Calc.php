@@ -1,6 +1,8 @@
 <?php
 namespace BrainGames\Games\Calc;
 
+use function \BrainGames\Game\start;
+
 const MIN_NUMBER = 0;
 const MAX_NUMBER = 100;
 const OPERATORS = ['*', '+', '-'];
@@ -32,5 +34,5 @@ function init()
         ];
     };
 
-    \BrainGames\Game\start(DESCRIPTION, $get_current_question_data);
+    start(DESCRIPTION, $get_current_question_data);
 }

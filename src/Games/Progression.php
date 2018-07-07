@@ -1,6 +1,8 @@
 <?php
 namespace BrainGames\Games\Progression;
 
+use function \BrainGames\Game\start;
+
 const PROGRESSION_LENGTH = 10;
 const STEP_MIN = 1;
 const STEP_MAX = 10;
@@ -25,7 +27,7 @@ function init()
         ];
     };
 
-    \BrainGames\Game\start(DESCRIPTION, $get_current_question_data);
+    start(DESCRIPTION, $get_current_question_data);
 }
 
 function progression($start, $step, $len)

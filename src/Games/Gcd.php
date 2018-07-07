@@ -1,6 +1,8 @@
 <?php
 namespace BrainGames\Games\Gcd;
 
+use function \BrainGames\Game\start;
+
 const MIN_NUMBER = 0;
 const MAX_NUMBER = 100;
 const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
@@ -17,7 +19,7 @@ function init()
         ];
     };
 
-    \BrainGames\Game\start(DESCRIPTION, $get_current_question_data);
+    start(DESCRIPTION, $get_current_question_data);
 }
 
 function gcd($num1, $num2)

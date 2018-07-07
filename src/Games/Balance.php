@@ -1,6 +1,8 @@
 <?php
 namespace BrainGames\Games\Balance;
 
+use function \BrainGames\Game\start;
+
 const MIN_NUMBER = 100;
 const MAX_NUMBER = 9999;
 const DESCRIPTION = 'Balance the given number.';
@@ -17,7 +19,7 @@ function init()
         ];
     };
 
-    \BrainGames\Game\start(DESCRIPTION, $get_current_question_data);
+    start(DESCRIPTION, $get_current_question_data);
 }
 
 function balance($number)

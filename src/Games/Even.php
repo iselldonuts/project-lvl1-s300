@@ -1,6 +1,8 @@
 <?php
 namespace BrainGames\Games\Even;
 
+use function \BrainGames\Game\start;
+
 const MIN_NUMBER = 0;
 const MAX_NUMBER = 100;
 const DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
@@ -17,7 +19,7 @@ function init()
         ];
     };
 
-    \BrainGames\Game\start(DESCRIPTION, $get_current_question_data);
+    start(DESCRIPTION, $get_current_question_data);
 }
 
 function is_even($number)
