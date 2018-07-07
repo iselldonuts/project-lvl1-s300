@@ -31,7 +31,7 @@ function balance($number)
     $rem = $sum % $len;
 
     $result = [];
-    for ($i = 0; $i < $len; $i++, $rem--) {
+    for ($i = 0; $i < $len; $i += 1, $rem -= 1) {
         $result[] = ($rem > 0) ? $base + 1 : $base;
     }
     return intval(implode('', array_reverse($result)));
