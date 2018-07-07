@@ -24,11 +24,15 @@ function init()
 
 function is_prime($number)
 {
-    $length = sqrt($number);
-    for ($i = 2; $i <= $length; $i += 1) {
+    if ($number < 2) {
+        return false;
+    }
+
+    $upto = sqrt($number);
+    for ($i = 2; $i <= $upto; $i += 1) {
         if ($number % $i === 0) {
             return false;
         }
     }
-    return $number > 1;
+    return true;
 }
